@@ -94,16 +94,18 @@
 
 
 
-<meta name="description" content="google用的很不稳定，太烦心，用代理又不稳定，经常断开，用vpn全局代理导致国内的网站访问慢。 要解决的方法很多，然后路由上设置好，那所有设备都解决了，所以… 还有修改dns只能解决污染问题，如果ip封锁，关键字封锁，那就没办法，只能继续代理，但是目前需求主要是用好google的服务就ok。 在开工之前，先了解一下DNS污染：  域名服务器缓存投毒（DNS cache poisoning），又">
+<meta name="description" content="淘宝最近很火的产品，但其实是骗人的，就只组合了一些网站，然后放在U盘卖，所谓的电视棒就是一个小U盘  骗子骗人的东西，大家要小心，别上当啊  下面给出破解后的地址：(资源挺多的，可以留备以后用)">
 <meta property="og:type" content="article">
-<meta property="og:title" content="openwrt通过pdnsd解决dns污染">
-<meta property="og:url" content="http://blog.llost.net/2014/01/05/share/2014-01-05-openwrt-pdnsd/index.html">
+<meta property="og:title" content="电视棒">
+<meta property="og:url" content="http://blog.llost.net/2012/12/29/mixed/2013-12-18-tv-stick/index.html">
 <meta property="og:site_name" content="llost 随记">
-<meta property="og:description" content="google用的很不稳定，太烦心，用代理又不稳定，经常断开，用vpn全局代理导致国内的网站访问慢。 要解决的方法很多，然后路由上设置好，那所有设备都解决了，所以… 还有修改dns只能解决污染问题，如果ip封锁，关键字封锁，那就没办法，只能继续代理，但是目前需求主要是用好google的服务就ok。 在开工之前，先了解一下DNS污染：  域名服务器缓存投毒（DNS cache poisoning），又">
-<meta property="og:updated_time" content="2017-08-19T07:34:12.000Z">
+<meta property="og:description" content="淘宝最近很火的产品，但其实是骗人的，就只组合了一些网站，然后放在U盘卖，所谓的电视棒就是一个小U盘  骗子骗人的东西，大家要小心，别上当啊  下面给出破解后的地址：(资源挺多的，可以留备以后用)">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/62b50d84gy1fip2v9egk0j20m80caq4z.jpg">
+<meta property="og:updated_time" content="2017-08-19T07:45:24.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="openwrt通过pdnsd解决dns污染">
-<meta name="twitter:description" content="google用的很不稳定，太烦心，用代理又不稳定，经常断开，用vpn全局代理导致国内的网站访问慢。 要解决的方法很多，然后路由上设置好，那所有设备都解决了，所以… 还有修改dns只能解决污染问题，如果ip封锁，关键字封锁，那就没办法，只能继续代理，但是目前需求主要是用好google的服务就ok。 在开工之前，先了解一下DNS污染：  域名服务器缓存投毒（DNS cache poisoning），又">
+<meta name="twitter:title" content="电视棒">
+<meta name="twitter:description" content="淘宝最近很火的产品，但其实是骗人的，就只组合了一些网站，然后放在U盘卖，所谓的电视棒就是一个小U盘  骗子骗人的东西，大家要小心，别上当啊  下面给出破解后的地址：(资源挺多的，可以留备以后用)">
+<meta name="twitter:image" content="http://ww1.sinaimg.cn/large/62b50d84gy1fip2v9egk0j20m80caq4z.jpg">
 
 
 
@@ -132,13 +134,13 @@
 
 
 
-  <link rel="canonical" href="http://blog.llost.net/2014/01/05/share/2014-01-05-openwrt-pdnsd/"/>
+  <link rel="canonical" href="http://blog.llost.net/2012/12/29/mixed/2013-12-18-tv-stick/"/>
 
 
 
 
 
-  <title>openwrt通过pdnsd解决dns污染 | llost 随记</title>
+  <title>电视棒 | llost 随记</title>
   
 
 
@@ -255,7 +257,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://blog.llost.net/2014/01/05/share/2014-01-05-openwrt-pdnsd/">
+    <link itemprop="mainEntityOfPage" href="http://blog.llost.net/2012/12/29/mixed/2013-12-18-tv-stick/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="H_z">
@@ -272,7 +274,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">openwrt通过pdnsd解决dns污染</h1>
+          <h1 class="post-title" itemprop="name headline">电视棒</h1>
         
 
         <div class="post-meta">
@@ -284,8 +286,8 @@
               
                 <span class="post-meta-item-text">Veröffentlicht am</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2014-01-05T11:30:24+08:00">
-                2014-01-05
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2012-12-29T19:38:00+08:00">
+                2012-12-29
               </time>
             
 
@@ -322,83 +324,18 @@
       
 
       
-        <p>google用的很不稳定，太烦心，用代理又不稳定，经常断开，用vpn全局代理导致国内的网站访问慢。</p>
-<p>要解决的方法很多，然后路由上设置好，那所有设备都解决了，所以…</p>
-<p>还有修改dns只能解决污染问题，如果ip封锁，关键字封锁，那就没办法，只能继续代理，但是目前需求主要是用好google的服务就ok。</p>
-<p>在开工之前，先了解一下DNS污染：</p>
-<blockquote>
-<p>域名服务器缓存投毒（DNS cache poisoning），又名域名服务器缓存污染（DNS cache pollution），是指一些刻意制造或无意中制造出来的域名服务器数据包，把域名指往不正确的IP地址。一般来说，外间在互联网上一般都有可信赖的域名服务器，但为减低网络上的交通压力，一般的域名都会把外间的域名服务器数据暂存起来，待下次有其他机器要求解析域名时，可以立即提供服务。一旦有关网域的局域域名服务器的缓存受到污染，就会把网域内的电脑导引往错误的服务器或服务器的网址。</p>
-</blockquote>
-<p>来自维基百科，更详细的请google</p>
-<p>目前好像DNS污染只是污染UDP协议，如果用TCP协议请求就汇很快得到响应。</p>
-<p><strong>具体教程:</strong></p>
-<p>####pdnsd<br>安装：</p>
-<pre><code>opkg update
-opkg install pdnsd
-</code></pre><p>安装好之后打开 <code>/etc/pdnsd.conf</code>,修改配置：</p>
-<pre><code>global {
-# debug = on;          # 调试模式, 日志会写入 /var/pdnsd/pdnsd.debug
-perm_cache=1024;
-cache_dir=&quot;/var/pdnsd&quot;;
-#    pid_file = /var/run/pdnsd.pid;
-run_as=&quot;nobody&quot;;
-server_ip = 127.0.0.1;  # Use eth0 here if you want to allow other
-            # machines on your network to query pdnsd.
-status_ctl = on;
-#    paranoid=on;       # This option reduces the chance of cache poisoning
-                   # but may make pdnsd less efficient, unfortunately.
-query_method=tcp_only; #只使用TCP查询DNS(重要)
-min_ttl=15m;       # Retain cached entries at least 15 minutes.
-max_ttl=1w;        # One week.
-timeout=10;        # Global timeout option (10 seconds).
-neg_domain_pol=on;
-udpbufsize=1024;   # Upper limit on the size of UDP messages.
-}
-#添加一个server，国内的走114的dns
-server {
-label= &quot;114 DNS&quot;;
-ip = 114.114.114.114,
-     114.114.115.115;
-timeout=4;         # Server timeout; this may be much shorter
-}
-#然后修改配置里面的server
-server {
-label= &quot;Google Public Dns&quot;;
-ip = 8.8.8.8, 8.8.4.4;  # Put your ISP&apos;s DNS-server address(es) here. 这个是dns的ip，我用的是google的DNS
-proxy_only=on;     # Do not query any name servers beside your ISP&apos;s.
-                   # This may be necessary if you are behind some
-                   # kind of firewall and cannot receive replies
-                   # from outside name servers.
-root_server= on;   #设置为 on 后, 就代替系统默认的 dns 了
-timeout=4;         # Server timeout; this may be much shorter
-           # that the global timeout option.
-uptest=none;       # 不去检测dns是否无效
-interface=eth0;    # The name of the interface to check.
-interval=10m;      # Check every 10 minutes.
-purge_cache=off;   # Keep stale cache entries in case the ISP&apos;s
-           # DNS servers go offline.
-edns_query=yes;    # Use EDNS for outgoing queries to allow UDP messages
-           # larger than 512 bytes. May cause trouble with some
-           # legacy systems.
-exclude=.cn,  #需要过滤的
-    .baidu.com,
-    .qq.com,       
-    .taobao.com,
-    .alipay.com;
-}
-</code></pre><p>ip地址如果自己有vps服务器那可以在服务器上安装一个pdnsd来做解析，没有的话就和我一样吧，但是最好找一些亚洲的DNS服务器。</p>
-<p>ok，一切设置完之后保存修改，然后输入命令:</p>
-<pre><code>/etc/init.d/pdnsd enable
-/etc/init.d/pdnsd start
-</code></pre><p>服务启动之后可以通过命令来测试一下</p>
-<pre><code>dig @ip -p 53 www.google.com
-</code></pre><p>ip是你家里路由器的，53是默认端口。<br>如果有问题请开启pdnsd.conf的debug模式查看日志，配合<code>pdnsd-ctl help</code>来解决。</p>
-<p>##参考资料</p>
-<ul>
-<li><a href="https://wido.me/sunteya/use-openwrt-resolve-gfw-dns-spoofing" target="_blank" rel="external">https://wido.me/sunteya/use-openwrt-resolve-gfw-dns-spoofing</a></li>
-<li><a href="http://bullshitlie.blogspot.jp/2012/03/pdnsd-google-dns-dns.html" target="_blank" rel="external">http://bullshitlie.blogspot.jp/2012/03/pdnsd-google-dns-dns.html</a></li>
-<li><a href="http://blog.zhen9ao.me/blog/2012/12/06/openwrtde-dnspei-zhi/" target="_blank" rel="external">http://blog.zhen9ao.me/blog/2012/12/06/openwrtde-dnspei-zhi/</a></li>
+        <ul>
+<li>淘宝最近很火的产品，但其实是骗人的，就只组合了一些网站，然后放在U盘卖，所谓的电视棒就是一个小U盘</li>
 </ul>
+<p><em>骗子骗人的东西，大家要小心，别上当啊</em><br><img src="http://ww1.sinaimg.cn/large/62b50d84gy1fip2v9egk0j20m80caq4z.jpg" alt=""></p>
+<ul>
+<li>下面给出破解后的地址：(资源挺多的，可以留备以后用)</li>
+</ul>
+<a id="more"></a>
+<p>高清直播<br><a href="http://www.netitv.com/a_flash/tysx_1_2/livelistTV/livePlayer.html" target="_blank">http://www.netitv.com/a_flash/tysx_1_2/livelistTV/livePlayer.html</a><br>标清直播<br><a href="http://www.tv123456789.com/live.asp" target="_blank">http://www.tv123456789.com/live.asp</a><br>国际电视直播频道<br><a href="http://tv.zqredstar.com/" target="_blank">http://tv.zqredstar.com</a><br>电视直播<br><a href="http://tv.zqredstar.com/live" target="_blank">http://tv.zqredstar.com/live</a><br><a href="http://tv.1piju.cn/live" target="_blank">http://tv.1piju.cn/live</a><br>聚合直播<br><a href="http://tv.zqredstar.com/he" target="_blank">http://tv.zqredstar.com/he</a><br><a href="http://dx1.haoetv.net/china/haoetv/live.html" target="_blank">http://dx1.haoetv.net/china/haoetv/live.html</a><br>天翼直播<br><a href="http://www.netitv.com/a_flash/tysx_1_2/livelistTV/livePlayer.html" target="_blank">http://www.netitv.com/a_flash/tysx_1_2/livelistTV/livePlayer.html</a><br><a href="http://tv.zqredstar.com/tvlive" target="_blank">http://tv.zqredstar.com/tvlive</a><br>威视直播<br><a href="http://www.topway.cn/livetv/livetv.jsp" target="_blank">http://www.topway.cn/livetv/livetv.jsp</a><br><a href="http://tv.zqredstar.com/wstv" target="_blank">http://tv.zqredstar.com/wstv</a><br><a href="http://tv.1piju.cn/wstv" target="_blank">http://tv.1piju.cn/wstv</a><br>高清电视<br><a href="http://tv.zqredstar.com/hdtv" target="_blank">http://tv.zqredstar.com/hdtv</a><br>高清剧集<br><a href="http://tv.zqredstar.com/kan" target="_blank">http://tv.zqredstar.com/kan</a><br><a href="http://tv.1piju.cn/kan" target="_blank">http://tv.1piju.cn/kan</a><br>PPS点播<br><a href="http://tv.zqredstar.com/pps" target="_blank">http://tv.zqredstar.com/pps</a><br><a href="http://tv.1piju.cn/pps" target="_blank">http://tv.1piju.cn/pps</a><br>UUSEE点播<br><a href="http://tv.zqredstar.com/uus" target="_blank">http://tv.zqredstar.com/uus</a><br><a href="http://tv.1piju.cn/uus" target="_blank">http://tv.1piju.cn/uus</a><br>体育直播<br><a href="http://tv.zqredstar.com/sport/live.html" target="_blank">http://tv.zqredstar.com/sport/live.html</a><br><a href="http://tv.1piju.cn/sport/" target="_blank">http://tv.1piju.cn/sport/</a></p>
+<p>Radio电台<br><a href="http://seetv.youtvs.info/" target="_blank">http://seetv.youtvs.info/</a><br><a href="http://tv.zqredstar.com/radio" target="_blank">http://tv.zqredstar.com/radio</a><br><a href="http://tv.1piju.cn/radio" target="_blank">http://tv.1piju.cn/radio</a><br>高清电影<br><a href="http://www.qiyi.com/" target="_blank">http://www.qiyi.com/</a><br>高清MTV<br><a href="http://www.yinyuetai.com/" target="_blank">http://www.yinyuetai.com/</a><br>在线游戏<br><a href="http://www.4399.com/special/19.htm" target="_blank">http://www.4399.com/special/19.htm</a><br><a href="http://www.4399.com/special/GameOfSpecial19_new.htm" target="_blank">http://www.4399.com/special/GameOfSpecial19_new.htm</a></p>
+<p><a title="http://365.tw2000.com" href="http://365.tw2000.com" target="_blank">http://365.tw2000.com</a>/<strong>——– 内部地址,就是要用密码才能看的那个</strong></p>
+<p>电视棒就是骗钱的东西</p>
 
       
     </div>
@@ -423,18 +360,14 @@ exclude=.cn,  #需要过滤的
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2014/01/01/share/2014-01-01-liunx-bitshares/" rel="next" title="liunx比特股挖矿">
-                <i class="fa fa-chevron-left"></i> liunx比特股挖矿
-              </a>
-            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2014/01/05/share/2014-01-05-openwrt-samba/" rel="prev" title="openwrt设置samba密码">
-                openwrt设置samba密码 <i class="fa fa-chevron-right"></i>
+              <a href="/2012/12/29/2012-12-29-immigrant/" rel="prev" title="贫贱不能移">
+                贫贱不能移 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>

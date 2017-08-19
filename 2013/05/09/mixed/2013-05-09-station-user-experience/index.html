@@ -94,16 +94,16 @@
 
 
 
-<meta name="description" content="google用的很不稳定，太烦心，用代理又不稳定，经常断开，用vpn全局代理导致国内的网站访问慢。 要解决的方法很多，然后路由上设置好，那所有设备都解决了，所以… 还有修改dns只能解决污染问题，如果ip封锁，关键字封锁，那就没办法，只能继续代理，但是目前需求主要是用好google的服务就ok。 在开工之前，先了解一下DNS污染：  域名服务器缓存投毒（DNS cache poisoning），又">
+<meta name="description" content="转自http://blog.csdn.net/kevinkevin/archive/2011/06/15/6545576.aspx 这个故事应该大家都遇到过，的确很郁闷。 前两天出差，在苏州火车站乘车，离开车时间很近了我才赶到车站，手里拿着提前买好的车票，看着大厅上方悬挂的大屏幕，寻找我应该在几楼等车，在哪个 站台等车。大屏幕上显示每个车次信息：车次号/到站时刻/出发时刻/目的地/站台等。我现在知">
 <meta property="og:type" content="article">
-<meta property="og:title" content="openwrt通过pdnsd解决dns污染">
-<meta property="og:url" content="http://blog.llost.net/2014/01/05/share/2014-01-05-openwrt-pdnsd/index.html">
+<meta property="og:title" content="从火车站的乘车经历想到的用户体验">
+<meta property="og:url" content="http://blog.llost.net/2013/05/09/mixed/2013-05-09-station-user-experience/index.html">
 <meta property="og:site_name" content="llost 随记">
-<meta property="og:description" content="google用的很不稳定，太烦心，用代理又不稳定，经常断开，用vpn全局代理导致国内的网站访问慢。 要解决的方法很多，然后路由上设置好，那所有设备都解决了，所以… 还有修改dns只能解决污染问题，如果ip封锁，关键字封锁，那就没办法，只能继续代理，但是目前需求主要是用好google的服务就ok。 在开工之前，先了解一下DNS污染：  域名服务器缓存投毒（DNS cache poisoning），又">
-<meta property="og:updated_time" content="2017-08-19T07:34:12.000Z">
+<meta property="og:description" content="转自http://blog.csdn.net/kevinkevin/archive/2011/06/15/6545576.aspx 这个故事应该大家都遇到过，的确很郁闷。 前两天出差，在苏州火车站乘车，离开车时间很近了我才赶到车站，手里拿着提前买好的车票，看着大厅上方悬挂的大屏幕，寻找我应该在几楼等车，在哪个 站台等车。大屏幕上显示每个车次信息：车次号/到站时刻/出发时刻/目的地/站台等。我现在知">
+<meta property="og:updated_time" content="2013-10-21T05:29:25.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="openwrt通过pdnsd解决dns污染">
-<meta name="twitter:description" content="google用的很不稳定，太烦心，用代理又不稳定，经常断开，用vpn全局代理导致国内的网站访问慢。 要解决的方法很多，然后路由上设置好，那所有设备都解决了，所以… 还有修改dns只能解决污染问题，如果ip封锁，关键字封锁，那就没办法，只能继续代理，但是目前需求主要是用好google的服务就ok。 在开工之前，先了解一下DNS污染：  域名服务器缓存投毒（DNS cache poisoning），又">
+<meta name="twitter:title" content="从火车站的乘车经历想到的用户体验">
+<meta name="twitter:description" content="转自http://blog.csdn.net/kevinkevin/archive/2011/06/15/6545576.aspx 这个故事应该大家都遇到过，的确很郁闷。 前两天出差，在苏州火车站乘车，离开车时间很近了我才赶到车站，手里拿着提前买好的车票，看着大厅上方悬挂的大屏幕，寻找我应该在几楼等车，在哪个 站台等车。大屏幕上显示每个车次信息：车次号/到站时刻/出发时刻/目的地/站台等。我现在知">
 
 
 
@@ -132,13 +132,13 @@
 
 
 
-  <link rel="canonical" href="http://blog.llost.net/2014/01/05/share/2014-01-05-openwrt-pdnsd/"/>
+  <link rel="canonical" href="http://blog.llost.net/2013/05/09/mixed/2013-05-09-station-user-experience/"/>
 
 
 
 
 
-  <title>openwrt通过pdnsd解决dns污染 | llost 随记</title>
+  <title>从火车站的乘车经历想到的用户体验 | llost 随记</title>
   
 
 
@@ -255,7 +255,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://blog.llost.net/2014/01/05/share/2014-01-05-openwrt-pdnsd/">
+    <link itemprop="mainEntityOfPage" href="http://blog.llost.net/2013/05/09/mixed/2013-05-09-station-user-experience/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="H_z">
@@ -272,7 +272,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">openwrt通过pdnsd解决dns污染</h1>
+          <h1 class="post-title" itemprop="name headline">从火车站的乘车经历想到的用户体验</h1>
         
 
         <div class="post-meta">
@@ -284,8 +284,8 @@
               
                 <span class="post-meta-item-text">Veröffentlicht am</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2014-01-05T11:30:24+08:00">
-                2014-01-05
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2013-05-09T17:18:00+08:00">
+                2013-05-09
               </time>
             
 
@@ -294,6 +294,28 @@
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">in</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/体验-杂文/" itemprop="url" rel="index">
+                    <span itemprop="name">体验 杂文</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -322,83 +344,15 @@
       
 
       
-        <p>google用的很不稳定，太烦心，用代理又不稳定，经常断开，用vpn全局代理导致国内的网站访问慢。</p>
-<p>要解决的方法很多，然后路由上设置好，那所有设备都解决了，所以…</p>
-<p>还有修改dns只能解决污染问题，如果ip封锁，关键字封锁，那就没办法，只能继续代理，但是目前需求主要是用好google的服务就ok。</p>
-<p>在开工之前，先了解一下DNS污染：</p>
-<blockquote>
-<p>域名服务器缓存投毒（DNS cache poisoning），又名域名服务器缓存污染（DNS cache pollution），是指一些刻意制造或无意中制造出来的域名服务器数据包，把域名指往不正确的IP地址。一般来说，外间在互联网上一般都有可信赖的域名服务器，但为减低网络上的交通压力，一般的域名都会把外间的域名服务器数据暂存起来，待下次有其他机器要求解析域名时，可以立即提供服务。一旦有关网域的局域域名服务器的缓存受到污染，就会把网域内的电脑导引往错误的服务器或服务器的网址。</p>
-</blockquote>
-<p>来自维基百科，更详细的请google</p>
-<p>目前好像DNS污染只是污染UDP协议，如果用TCP协议请求就汇很快得到响应。</p>
-<p><strong>具体教程:</strong></p>
-<p>####pdnsd<br>安装：</p>
-<pre><code>opkg update
-opkg install pdnsd
-</code></pre><p>安装好之后打开 <code>/etc/pdnsd.conf</code>,修改配置：</p>
-<pre><code>global {
-# debug = on;          # 调试模式, 日志会写入 /var/pdnsd/pdnsd.debug
-perm_cache=1024;
-cache_dir=&quot;/var/pdnsd&quot;;
-#    pid_file = /var/run/pdnsd.pid;
-run_as=&quot;nobody&quot;;
-server_ip = 127.0.0.1;  # Use eth0 here if you want to allow other
-            # machines on your network to query pdnsd.
-status_ctl = on;
-#    paranoid=on;       # This option reduces the chance of cache poisoning
-                   # but may make pdnsd less efficient, unfortunately.
-query_method=tcp_only; #只使用TCP查询DNS(重要)
-min_ttl=15m;       # Retain cached entries at least 15 minutes.
-max_ttl=1w;        # One week.
-timeout=10;        # Global timeout option (10 seconds).
-neg_domain_pol=on;
-udpbufsize=1024;   # Upper limit on the size of UDP messages.
-}
-#添加一个server，国内的走114的dns
-server {
-label= &quot;114 DNS&quot;;
-ip = 114.114.114.114,
-     114.114.115.115;
-timeout=4;         # Server timeout; this may be much shorter
-}
-#然后修改配置里面的server
-server {
-label= &quot;Google Public Dns&quot;;
-ip = 8.8.8.8, 8.8.4.4;  # Put your ISP&apos;s DNS-server address(es) here. 这个是dns的ip，我用的是google的DNS
-proxy_only=on;     # Do not query any name servers beside your ISP&apos;s.
-                   # This may be necessary if you are behind some
-                   # kind of firewall and cannot receive replies
-                   # from outside name servers.
-root_server= on;   #设置为 on 后, 就代替系统默认的 dns 了
-timeout=4;         # Server timeout; this may be much shorter
-           # that the global timeout option.
-uptest=none;       # 不去检测dns是否无效
-interface=eth0;    # The name of the interface to check.
-interval=10m;      # Check every 10 minutes.
-purge_cache=off;   # Keep stale cache entries in case the ISP&apos;s
-           # DNS servers go offline.
-edns_query=yes;    # Use EDNS for outgoing queries to allow UDP messages
-           # larger than 512 bytes. May cause trouble with some
-           # legacy systems.
-exclude=.cn,  #需要过滤的
-    .baidu.com,
-    .qq.com,       
-    .taobao.com,
-    .alipay.com;
-}
-</code></pre><p>ip地址如果自己有vps服务器那可以在服务器上安装一个pdnsd来做解析，没有的话就和我一样吧，但是最好找一些亚洲的DNS服务器。</p>
-<p>ok，一切设置完之后保存修改，然后输入命令:</p>
-<pre><code>/etc/init.d/pdnsd enable
-/etc/init.d/pdnsd start
-</code></pre><p>服务启动之后可以通过命令来测试一下</p>
-<pre><code>dig @ip -p 53 www.google.com
-</code></pre><p>ip是你家里路由器的，53是默认端口。<br>如果有问题请开启pdnsd.conf的debug模式查看日志，配合<code>pdnsd-ctl help</code>来解决。</p>
-<p>##参考资料</p>
-<ul>
-<li><a href="https://wido.me/sunteya/use-openwrt-resolve-gfw-dns-spoofing" target="_blank" rel="external">https://wido.me/sunteya/use-openwrt-resolve-gfw-dns-spoofing</a></li>
-<li><a href="http://bullshitlie.blogspot.jp/2012/03/pdnsd-google-dns-dns.html" target="_blank" rel="external">http://bullshitlie.blogspot.jp/2012/03/pdnsd-google-dns-dns.html</a></li>
-<li><a href="http://blog.zhen9ao.me/blog/2012/12/06/openwrtde-dnspei-zhi/" target="_blank" rel="external">http://blog.zhen9ao.me/blog/2012/12/06/openwrtde-dnspei-zhi/</a></li>
-</ul>
+        <p>转自<a href="http://blog.csdn.net/kevinkevin/archive/2011/06/15/6545576.aspx" target="_blank" rel="external">http://blog.csdn.net/kevinkevin/archive/2011/06/15/6545576.aspx</a></p>
+<p>这个故事应该大家都遇到过，的确很郁闷。</p>
+<p>前两天出差，在苏州火车站乘车，离开车时间很近了我才赶到车站，手里拿着提前买好的车票，看着大厅上方悬挂的大屏幕，寻找我应该在几楼等车，在哪个 站台等车。大屏幕上显示每个车次信息：车次号/到站时刻/出发时刻/目的地/站台等。我现在知道我的车次号和出发时间，我就想知道在哪个站台等车。</p>
+<p>不巧的是，这个屏幕并不能把全天的信息显示到一个屏幕上，它过大约10秒就刷新屏幕，显示另一个时间段的车次信息。8点到10点的信息已经过了，再显示 10点到12点，12点到14点，…, 我只好等，我的车次是9点钟的，我需要等它显示完一轮后重新回到我这个车次的时间段。眼睁睁看它从晚上到深夜，再回到凌晨，早上，OK, 到9点的时间段了，赶紧看，不料眼睛一花，还没找到我的车次呢，这一屏就过去了，我郁闷啊。</p>
+<a id="more"></a>
+<p>我就想知道我的车次，我的车次就在现在这个时间段，在屏幕下面看的其他人也一定是在未来一个或者两个小时乘车的，你给我们显示下午的或者晚上的车次信息， 而这与我们没有一毛钱的关系。为什么不把屏幕分成两部分，一部分是每隔半个小时刷新的，上面就显示目前2个小时之内的车次信息；另一部分还像原来的，隔 10秒种刷新一下，显示其他时间段的信息。这不就既满足了所有乘客的需求，又大大提高了那些需求最急的乘客的友好体验？</p>
+<p>火车站的服务其实一直在提高，慢慢的变的越来越现代化，服务也越来越体贴。比如以前我坐火车，检票后走到站台上车，根据我的车票上的车厢号，去找相应的车 厢，但是我不知道这些车厢是怎么排的，是从前往后的呢，还是从后往前的？我需要连着看两个车厢，才知道这个顺序。现在我不需要了，站台上悬挂的液晶屏幕上 写了类似“1到9车厢的往后走，10到18车厢的往前走”，我立即就知道我该往哪边走了，要走多少距离。</p>
+<p>用户体验满意度的提高就在这些小事情上，每一个进步都会让顾客感到温暖。国内很多地方的服务水平长久以来一直很差，稍微一些提高，我们就觉得很惊喜。但拿 国外某些地方比较，目前我们还有很大的差距。回想几年前我在德国出差，周末去柏林玩，从德雷斯顿坐火车到柏林，买票是从自动售票机上买的，选择好你能接受 的价位，车次类型，旅途耗用时间等，它会很智能的给你排出一个计划，中间转车越多越便宜。最能给我惊喜的是它的转车，我到一个小站下来，就是站里面的一个 站台，迈腿走两步，在站台的另一边等车，等约10分钟后，就可以换上另一趟车。你不需要换站台，更不需要出站，重新买票，问路等一系列麻烦事。</p>
+<p>我认为检查一个火车站的服务水平，不能让一个经常出差的人去评论，而是让一个中等智力水平，初中毕业的，第一次到这个站的人来评判。如果这个人只凭自己可以顺利的入站，等车，上车，出站，不出错误，不走冤枉路，那么我们可以说，这个火车站的服务水平是合格的。</p>
 
       
     </div>
@@ -423,8 +377,8 @@ exclude=.cn,  #需要过滤的
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2014/01/01/share/2014-01-01-liunx-bitshares/" rel="next" title="liunx比特股挖矿">
-                <i class="fa fa-chevron-left"></i> liunx比特股挖矿
+              <a href="/2012/12/29/2012-12-29-immigrant/" rel="next" title="贫贱不能移">
+                <i class="fa fa-chevron-left"></i> 贫贱不能移
               </a>
             
           </div>
@@ -433,8 +387,8 @@ exclude=.cn,  #需要过滤的
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2014/01/05/share/2014-01-05-openwrt-samba/" rel="prev" title="openwrt设置samba密码">
-                openwrt设置samba密码 <i class="fa fa-chevron-right"></i>
+              <a href="/2013/05/24/2013-05-24-sandisk-extreme-sd/" rel="prev" title="SanDisk-Extreme-SD">
+                SanDisk-Extreme-SD <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
