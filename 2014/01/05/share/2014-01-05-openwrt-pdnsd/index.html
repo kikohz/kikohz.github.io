@@ -94,16 +94,16 @@
 
 
 
-<meta name="description" content="Title: openwrt通过pdnsd解决dns污染Date: 2014-01-05 11:30:24 google用的很不稳定，太烦心，用代理又不稳定，经常断开，用vpn全局代理导致国内的网站访问慢。 要解决的方法很多，然后路由上设置好，那所有设备都解决了，所以… 还有修改dns只能解决污染问题，如果ip封锁，关键字封锁，那就没办法，只能继续代理，但是目前需求主要是用好google的服务就o">
+<meta name="description" content="google用的很不稳定，太烦心，用代理又不稳定，经常断开，用vpn全局代理导致国内的网站访问慢。 要解决的方法很多，然后路由上设置好，那所有设备都解决了，所以… 还有修改dns只能解决污染问题，如果ip封锁，关键字封锁，那就没办法，只能继续代理，但是目前需求主要是用好google的服务就ok。 在开工之前，先了解一下DNS污染：  域名服务器缓存投毒（DNS cache poisoning），又">
 <meta property="og:type" content="article">
-<meta property="og:title" content="llost 随记">
+<meta property="og:title" content="openwrt通过pdnsd解决dns污染">
 <meta property="og:url" content="http://blog.llost.net/2014/01/05/share/2014-01-05-openwrt-pdnsd/index.html">
 <meta property="og:site_name" content="llost 随记">
-<meta property="og:description" content="Title: openwrt通过pdnsd解决dns污染Date: 2014-01-05 11:30:24 google用的很不稳定，太烦心，用代理又不稳定，经常断开，用vpn全局代理导致国内的网站访问慢。 要解决的方法很多，然后路由上设置好，那所有设备都解决了，所以… 还有修改dns只能解决污染问题，如果ip封锁，关键字封锁，那就没办法，只能继续代理，但是目前需求主要是用好google的服务就o">
-<meta property="og:updated_time" content="2014-01-05T15:07:56.000Z">
+<meta property="og:description" content="google用的很不稳定，太烦心，用代理又不稳定，经常断开，用vpn全局代理导致国内的网站访问慢。 要解决的方法很多，然后路由上设置好，那所有设备都解决了，所以… 还有修改dns只能解决污染问题，如果ip封锁，关键字封锁，那就没办法，只能继续代理，但是目前需求主要是用好google的服务就ok。 在开工之前，先了解一下DNS污染：  域名服务器缓存投毒（DNS cache poisoning），又">
+<meta property="og:updated_time" content="2017-08-19T07:34:12.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="llost 随记">
-<meta name="twitter:description" content="Title: openwrt通过pdnsd解决dns污染Date: 2014-01-05 11:30:24 google用的很不稳定，太烦心，用代理又不稳定，经常断开，用vpn全局代理导致国内的网站访问慢。 要解决的方法很多，然后路由上设置好，那所有设备都解决了，所以… 还有修改dns只能解决污染问题，如果ip封锁，关键字封锁，那就没办法，只能继续代理，但是目前需求主要是用好google的服务就o">
+<meta name="twitter:title" content="openwrt通过pdnsd解决dns污染">
+<meta name="twitter:description" content="google用的很不稳定，太烦心，用代理又不稳定，经常断开，用vpn全局代理导致国内的网站访问慢。 要解决的方法很多，然后路由上设置好，那所有设备都解决了，所以… 还有修改dns只能解决污染问题，如果ip封锁，关键字封锁，那就没办法，只能继续代理，但是目前需求主要是用好google的服务就ok。 在开工之前，先了解一下DNS污染：  域名服务器缓存投毒（DNS cache poisoning），又">
 
 
 
@@ -138,7 +138,7 @@
 
 
 
-  <title> | llost 随记</title>
+  <title>openwrt通过pdnsd解决dns污染 | llost 随记</title>
   
 
 
@@ -272,7 +272,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline"></h1>
+          <h1 class="post-title" itemprop="name headline">openwrt通过pdnsd解决dns污染</h1>
         
 
         <div class="post-meta">
@@ -284,7 +284,7 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2014-01-05T23:07:56+08:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2014-01-05T11:30:24+08:00">
                 2014-01-05
               </time>
             
@@ -322,8 +322,7 @@
       
 
       
-        <p>Title: openwrt通过pdnsd解决dns污染<br>Date: 2014-01-05 11:30:24</p>
-<p>google用的很不稳定，太烦心，用代理又不稳定，经常断开，用vpn全局代理导致国内的网站访问慢。</p>
+        <p>google用的很不稳定，太烦心，用代理又不稳定，经常断开，用vpn全局代理导致国内的网站访问慢。</p>
 <p>要解决的方法很多，然后路由上设置好，那所有设备都解决了，所以…</p>
 <p>还有修改dns只能解决污染问题，如果ip封锁，关键字封锁，那就没办法，只能继续代理，但是目前需求主要是用好google的服务就ok。</p>
 <p>在开工之前，先了解一下DNS污染：</p>
@@ -382,7 +381,7 @@ edns_query=yes;    # Use EDNS for outgoing queries to allow UDP messages
            # larger than 512 bytes. May cause trouble with some
            # legacy systems.
 exclude=.cn,  #需要过滤的
-    .baidu.com, 
+    .baidu.com,
     .qq.com,       
     .taobao.com,
     .alipay.com;
@@ -434,8 +433,8 @@ exclude=.cn,  #需要过滤的
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2014/01/05/share/2014-01-05-openwrt-samba/" rel="prev" title="">
-                 <i class="fa fa-chevron-right"></i>
+              <a href="/2014/01/05/share/2014-01-05-openwrt-samba/" rel="prev" title="openwrt设置samba密码">
+                openwrt设置samba密码 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -504,7 +503,7 @@ exclude=.cn,  #需要过滤的
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">19</span>
+                <span class="site-state-item-count">21</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>

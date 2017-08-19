@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="####介绍什么是持续继承？ 持续集成是一种软件开发实践，即团队开发成员经常集成他们的工作，通常每个成员每天至少集成一次，也就意味着每天可能会发生多次集成. 详情:http://en.wikipedia.org/wiki/Continuous_integration 本文主要是介绍如何使用jenkins来搭建ios的CI环境，首先我们得有一台mac机器。😁  ####安装注意一下jenkins需">
+<meta property="og:type" content="article">
+<meta property="og:title" content="搭建IOS CI服务器">
+<meta property="og:url" content="http://blog.llost.net/2014/09/12/share/2014-09-16-jenkins/index.html">
+<meta property="og:site_name" content="llost 随记">
+<meta property="og:description" content="####介绍什么是持续继承？ 持续集成是一种软件开发实践，即团队开发成员经常集成他们的工作，通常每个成员每天至少集成一次，也就意味着每天可能会发生多次集成. 详情:http://en.wikipedia.org/wiki/Continuous_integration 本文主要是介绍如何使用jenkins来搭建ios的CI环境，首先我们得有一台mac机器。😁  ####安装注意一下jenkins需">
+<meta property="og:image" content="http://ww4.sinaimg.cn/large/62b50d84jw1ek9t7estenj20ms0fvwfv.jpg">
+<meta property="og:image" content="http://ww2.sinaimg.cn/large/62b50d84jw1ekeaklb1zej20qp04yglw.jpg">
+<meta property="og:image" content="http://ww4.sinaimg.cn/large/62b50d84jw1ekeao19gjgj20rp0aj3zi.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/62b50d84jw1ek9tam38e5j20ps0e6jt6.jpg">
+<meta property="og:image" content="http://ww3.sinaimg.cn/large/62b50d84jw1ek9tm3c4oaj213c0oq77y.jpg">
+<meta property="og:image" content="http://ww3.sinaimg.cn/large/62b50d84jw1ek9tsp2usbj20ob072aan.jpg">
+<meta property="og:image" content="http://ww2.sinaimg.cn/large/62b50d84jw1ek9u20ui6uj20ot05et96.jpg">
+<meta property="og:image" content="http://ww2.sinaimg.cn/large/62b50d84jw1ekea303k5cj20tf0cmaax.jpg">
+<meta property="og:image" content="http://ww3.sinaimg.cn/large/62b50d84jw1ekea6be0qbj20mw0awmyk.jpg">
+<meta property="og:image" content="http://ww4.sinaimg.cn/large/62b50d84jw1ekeahi27vej20rf08g74x.jpg">
+<meta property="og:image" content="http://ww2.sinaimg.cn/large/62b50d84jw1ekeaekecgej20ts0bk0ti.jpg">
+<meta property="og:image" content="http://ww3.sinaimg.cn/large/62b50d84jw1ekeasba3n2j20rb05nq3f.jpg">
+<meta property="og:updated_time" content="2017-08-19T07:37:49.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="搭建IOS CI服务器">
+<meta name="twitter:description" content="####介绍什么是持续继承？ 持续集成是一种软件开发实践，即团队开发成员经常集成他们的工作，通常每个成员每天至少集成一次，也就意味着每天可能会发生多次集成. 详情:http://en.wikipedia.org/wiki/Continuous_integration 本文主要是介绍如何使用jenkins来搭建ios的CI环境，首先我们得有一台mac机器。😁  ####安装注意一下jenkins需">
+<meta name="twitter:image" content="http://ww4.sinaimg.cn/large/62b50d84jw1ek9t7estenj20ms0fvwfv.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://blog.llost.net/2014/09/12/share/2014-09-16-jenkins/"/>
+
+
+
+
+
+  <title>搭建IOS CI服务器 | llost 随记</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">llost 随记</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">llost随记</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://blog.llost.net/2014/09/12/share/2014-09-16-jenkins/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="H_z">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="llost 随记">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">搭建IOS CI服务器</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2014-09-12T16:44:44+08:00">
+                2014-09-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>####介绍<br>什么是持续继承？</p>
+<p>持续集成是一种软件开发实践，即团队开发成员经常集成他们的工作，通常每个成员每天至少集成一次，也就意味着每天可能会发生多次集成.</p>
+<p>详情:<a href="http://en.wikipedia.org/wiki/Continuous_integration" target="_blank" rel="external">http://en.wikipedia.org/wiki/Continuous_integration</a></p>
+<p>本文主要是介绍如何使用jenkins来搭建ios的CI环境，首先我们得有一台mac机器。😁</p>
+<hr>
+<p>####安装<br>注意一下jenkins需要jdk的支持所以如果没有安装的同学请先去安装jdk<br><a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html" target="_blank" rel="external">打开下载页面</a></p>
+<p>Jenkins的<a href="http://jenkins-ci.org/" target="_blank" rel="external">官网</a>右侧有下载，选择对应的Mac OS X版本。</p>
+<p>安装pkg的包，安装完成会自动打开<a href="http://127.0.0.1:8080" target="_blank" rel="external">http://127.0.0.1:8080</a></p>
+<p>然后你就会看见<br><img src="http://ww4.sinaimg.cn/large/62b50d84jw1ek9t7estenj20ms0fvwfv.jpg" alt=""></p>
+<p>我们首先设置邮件</p>
+<p>系统管理–&gt;系统设置</p>
+<p><img src="http://ww2.sinaimg.cn/large/62b50d84jw1ekeaklb1zej20qp04yglw.jpg" alt=""></p>
+<p><img src="http://ww4.sinaimg.cn/large/62b50d84jw1ekeao19gjgj20rp0aj3zi.jpg" alt=""></p>
+<p>设置之后可以选中”通过发送测试邮件测试配置”来进行测试。</p>
+<p>注:(记得开启你邮件的smtp服务)</p>
+<p>然后我们点击新建创建一个新项目(选自由风格的软件项目)<br><img src="http://ww1.sinaimg.cn/large/62b50d84jw1ek9tam38e5j20ps0e6jt6.jpg" alt=""></p>
+<p>然后进入配置界面<br><img src="http://ww3.sinaimg.cn/large/62b50d84jw1ek9tm3c4oaj213c0oq77y.jpg" alt=""></p>
+<p>#####构建触发器配置<br>触发条件设置</p>
+<p>由于我们需要每天来build 所以我们选中<code>Build periodically</code></p>
+<p>规则是每个工作日的下午6点25到30分和早上10点的25到30分之间进行build，所以在输入框中输入“H(25-30) 18 <em> </em> 1-5”（点击输入框右边的问号，会有详细的规则编写说明）</p>
+<p>如图：<br><img src="http://ww3.sinaimg.cn/large/62b50d84jw1ek9tsp2usbj20ob072aan.jpg" alt=""></p>
+<p>#####然后构建配置</p>
+<p>点击增加构建步骤，然后再弹出来的框里面选择Execute shell</p>
+<p>这里可以使用xcode插件，也可以自己写脚本来实现。</p>
+<p>脚本也有很多种，xcode 的xcodebuild，Facebook的xctool，自己实现。</p>
+<p>如图:<br><img src="http://ww2.sinaimg.cn/large/62b50d84jw1ek9u20ui6uj20ot05et96.jpg" alt=""></p>
+<p>几种脚本</p>
+<p>######xcodebuild:</p>
+<pre><code>export DEVELOPER_DIR=/Applications/Xcode.app/Contents/Developer/
+
+xcrun xcodebuild clean build
+</code></pre><h6 id="xctool-暂时不支持xcode-6-https-github-com-facebook-xctool"><a href="#xctool-暂时不支持xcode-6-https-github-com-facebook-xctool" class="headerlink" title="xctool (暂时不支持xcode 6)https://github.com/facebook/xctool"></a>xctool (暂时不支持xcode 6)<a href="https://github.com/facebook/xctool" target="_blank" rel="external">https://github.com/facebook/xctool</a></h6><p>github上有使用介绍。需要注意的是，你需要把xctool放到你的工程目录提交上来，然后执行xctool。</p>
+<p>我这里直接下载github的xciool release版本<a href="https://github.com/facebook/xctool/releases" target="_blank" rel="external">https://github.com/facebook/xctool/releases</a>位置在工程文件目录下，然后build命令:</p>
+<pre><code>xctool/bin/xctool -project MyPj.xcodeproj -scheme MyPj build
+</code></pre><p>######自己写编译脚本(我使用的是CCMakefile4iOS)<a href="https://github.com/webfrogs/CCMakefile4iOS" target="_blank" rel="external">https://github.com/webfrogs/CCMakefile4iOS</a></p>
+<p>这个makefile的功能有：指定Provisioning Profile打包编译，生成itms-services协议相关文件并以scp或者ftp方式上传到服务器来实现ota功能，发送邮件通知和iMessage通知</p>
+<p>邮件通知没测试，imessage由于网络问题没测试成功。</p>
+<pre><code>make clean
+make
+make upload
+make sendEmail
+make sendIMsg
+</code></pre><p>说明：如果不使用iMessage通知，可以去掉第一行和最后一行，否则，Jenkins默认的shell会导致iMessage通知不能正常发送</p>
+<p>#####编译后设置</p>
+<p>工程编译之后我们可以设置编译出来的ipa文件，和一些build相关文件放一起来提供下载。bilid添加邮件提醒。</p>
+<p>如图:</p>
+<p><img src="http://ww2.sinaimg.cn/large/62b50d84jw1ekea303k5cj20tf0cmaax.jpg" alt=""></p>
+<p>ok,到了这里一些基本设置已经完成，保存设置之后我们就可以去测试一下，点击”立即构建”,系统会开始按我们刚才的设置去执行编译过程，我们可以在<code>Console Output</code>开到编译输出信息，成功之后会看到:</p>
+<p><img src="http://ww3.sinaimg.cn/large/62b50d84jw1ekea6be0qbj20mw0awmyk.jpg" alt=""></p>
+<p>####TestFlight</p>
+<p>首先安装TestFlight插件</p>
+<p>系统管理–&gt;管理插件</p>
+<p>然后搜索Testflight，会找到 Testflight Plugin 插件，点击安装。</p>
+<p>开始配置Testflight:</p>
+<p>系统管理–&gt;系统设置</p>
+<p><img src="http://ww4.sinaimg.cn/large/62b50d84jw1ekeahi27vej20rf08g74x.jpg" alt=""></p>
+<p>然后回到刚才的配置界面，在编译后设置，会多了一个Upload to Testflight</p>
+<p>添加之后:</p>
+<p><img src="http://ww2.sinaimg.cn/large/62b50d84jw1ekeaekecgej20ts0bk0ti.jpg" alt=""></p>
+<p>然后保存，之后构建就可以。</p>
+<p>这是一个简单的教程，jenkins还很强大，需要自己去挖掘。</p>
+<p>最后关于编译找不到证书和配置文件的错误，我这也是在网上找的答案。<br>Xcode Builder在系统配置中有。但是自己写的脚本就会提示找不到，编译出错。</p>
+<p>所以我找到的办法是把</p>
+<p>~/Library/MobileDevice/Provisioning Profiles<br>放到</p>
+<p>/Users/Shared/Jenkins/Library/MobileDevice/Provisioning Profiles</p>
+<p>keychain里面把开发者证书加到了系统项里面就ok了。</p>
+<p><img src="http://ww3.sinaimg.cn/large/62b50d84jw1ekeasba3n2j20rb05nq3f.jpg" alt=""></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2014/07/03/share/2014-07-03-mitmproxy/" rel="next" title="mitmproxy抓包">
+                <i class="fa fa-chevron-left"></i> mitmproxy抓包
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2015/05/21/share/2015-05-21-AmazonBasics/" rel="prev" title="亚马逊Basics车载充电器和iphone数据线和开箱">
+                亚马逊Basics车载充电器和iphone数据线和开箱 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="H_z" />
+          <p class="site-author-name" itemprop="name">H_z</p>
+           
+              <p class="site-description motion-element" itemprop="description">H_z ́ Blog</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">21</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">categories</span>
+              
+            </div>
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-6"><a class="nav-link" href="#xctool-暂时不支持xcode-6-https-github-com-facebook-xctool"><span class="nav-number">1.</span> <span class="nav-text">xctool (暂时不支持xcode 6)https://github.com/facebook/xctool</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2012 &mdash; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">H_z</span>
+
+  
+</div>
+
+
+  <div class="powered-by">
+    Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+  </div>
+
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">
+    Theme &mdash;
+    <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+      NexT.Mist
+    </a>
+  </div>
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
