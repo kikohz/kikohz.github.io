@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="title: Linksys EA6700 刷Advanced Tomato time:2015-10-24 hi，各位1024节快乐哈。 废话不多，开始入正题，EA6700买来有1年多了，刚买那会没有可刷得固件，然后后来也一直没研究，中间有一段时间DD是可以刷了，但是貌似不是太稳定所以也没有去尝试，直到后来无意中发现了Advanced Tomato， 然后查论坛，EA6700 刷Tomato貌似">
+<meta property="og:type" content="article">
+<meta property="og:title" content="llost 随记">
+<meta property="og:url" content="http://blog.llost.net/2015/10/24/share/2015-10-24-linksys6700-tomato/index.html">
+<meta property="og:site_name" content="llost 随记">
+<meta property="og:description" content="title: Linksys EA6700 刷Advanced Tomato time:2015-10-24 hi，各位1024节快乐哈。 废话不多，开始入正题，EA6700买来有1年多了，刚买那会没有可刷得固件，然后后来也一直没研究，中间有一段时间DD是可以刷了，但是貌似不是太稳定所以也没有去尝试，直到后来无意中发现了Advanced Tomato， 然后查论坛，EA6700 刷Tomato貌似">
+<meta property="og:image" content="http://ww4.sinaimg.cn/large/62b50d84jw1exbuvg0vz9j21280rhn25.jpg">
+<meta property="og:image" content="http://ww4.sinaimg.cn/large/62b50d84jw1exbux8d9yuj21280rhaff.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/62b50d84jw1exbv9g7q6aj21090jq45m.jpg">
+<meta property="og:image" content="http://ww2.sinaimg.cn/large/62b50d84jw1exbvf0lvojj20z70k4418.jpg">
+<meta property="og:image" content="http://ww3.sinaimg.cn/large/62b50d84jw1exbvhj19dgj20iy0damzw.jpg">
+<meta property="og:image" content="http://ww3.sinaimg.cn/large/62b50d84jw1exbvm7o6u7j20pe0j3abw.jpg">
+<meta property="og:image" content="http://ww2.sinaimg.cn/large/62b50d84jw1exbvr2dcl6j20fk05odhv.jpg">
+<meta property="og:image" content="http://ww4.sinaimg.cn/large/62b50d84jw1exbw3osa6yj20ph076t9r.jpg">
+<meta property="og:updated_time" content="2016-09-17T13:20:00.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="llost 随记">
+<meta name="twitter:description" content="title: Linksys EA6700 刷Advanced Tomato time:2015-10-24 hi，各位1024节快乐哈。 废话不多，开始入正题，EA6700买来有1年多了，刚买那会没有可刷得固件，然后后来也一直没研究，中间有一段时间DD是可以刷了，但是貌似不是太稳定所以也没有去尝试，直到后来无意中发现了Advanced Tomato， 然后查论坛，EA6700 刷Tomato貌似">
+<meta name="twitter:image" content="http://ww4.sinaimg.cn/large/62b50d84jw1exbuvg0vz9j21280rhn25.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://blog.llost.net/2015/10/24/share/2015-10-24-linksys6700-tomato/"/>
+
+
+
+
+
+  <title> | llost 随记</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">llost 随记</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">llost随记</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://blog.llost.net/2015/10/24/share/2015-10-24-linksys6700-tomato/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="H_z">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="llost 随记">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline"></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2015-10-24T09:40:53+08:00">
+                2015-10-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>title: Linksys EA6700 刷Advanced Tomato</p>
+<p>time:2015-10-24</p>
+<p>hi，各位1024节快乐哈。</p>
+<p>废话不多，开始入正题，EA6700买来有1年多了，刚买那会没有可刷得固件，然后后来也一直没研究，中间有一段时间DD是可以刷了，但是貌似不是太稳定所以也没有去尝试，直到后来无意中发现了Advanced Tomato， 然后查论坛，EA6700 刷Tomato貌似比较稳定，所以就开始尝试刷机。</p>
+<p>注:Advanced Tomato没有中文，提别介意的朋友慎重</p>
+<p>Advanced Tomato 是国外大神在Shibby Tomato的版本之上写了一个比较现代化的界面：</p>
+<p><img src="http://ww4.sinaimg.cn/large/62b50d84jw1exbuvg0vz9j21280rhn25.jpg" alt=""></p>
+<p>是不是清爽好多。</p>
+<p>目前最新版本是131，另外可刷得机器也比较多：</p>
+<p><img src="http://ww4.sinaimg.cn/large/62b50d84jw1exbux8d9yuj21280rhaff.jpg" alt=""></p>
+<p>截图只是一部分，这里给出链接，可以看看自己的路由器是否支持：<a href="https://advancedtomato.com/downloads" target="_blank" rel="external">advancedtomato.com</a></p>
+<p>另外作者还提供了<a href="https://advancedtomato.com/demo/status-overview.asp" target="_blank" rel="external">Demo</a> 可以在刷机之前点击看看。</p>
+<p>ok，之前的介绍完成，现在正式开始刷机(提前注明一下，由于我是先刷机后写的教程，所以Linksys 官方固件界面我没有做截图，只能去网上找来图片，如有侵权请告知我会修改，谢谢)</p>
+<p>刷机之前首先建议做(为了你的路由器不会变砖) <font color="red" size="+2">Hard Reset 30/30/30</font> </p>
+<font color="red">捅RESET之前你先确保DD固件里面的RESET功能是打开了的，一般这个选项是默认打开的！<br><br>首先将路由器通电，接着捅RESET孔直到第一个30秒结束，接着在不松掉RESET的前提下，将电源断掉等待30秒，最后将电源在插上去再继续压着RESET孔30秒！就完成这个步骤了！<br><br>这里我要说的是整个过程不能松掉RESET孔！也就是说你要按RESET一直90秒！</font>
+
+<p>需要注意的是ASUS的路由器在这个步骤之后一段时间后，一定要拔掉电源再插上电源才能正常启动！</p>
+<p>ok做完之后你的路由器就会恢复到出厂状态，然后进入到这个界面:</p>
+<p><img src="http://ww1.sinaimg.cn/large/62b50d84jw1exbv9g7q6aj21090jq45m.jpg" alt=""></p>
+<p>点击选择固件，在弹出的框中选择你下载的tomato固件，然后系统会让你2次确认，点击确认之后开始刷机，切记刷机过程千万要保证不要断电。</p>
+<p>大约5分钟左右会刷好，然后你会搜索到Tomato的无线，密码看你路由器后面的标签(Linksys是有的),也就是出厂默认的那个。</p>
+<p>进入刷好的Tomato之后先设置管理员密码和ssh登陆：</p>
+<p><img src="http://ww2.sinaimg.cn/large/62b50d84jw1exbvf0lvojj20z70k4418.jpg" alt=""></p>
+<p>设置好之后保存，然后ssh登陆：</p>
+<pre><code>ssh root@192.168.1.1
+</code></pre><p>你会看到下面的信息：</p>
+<p><img src="http://ww3.sinaimg.cn/large/62b50d84jw1exbvhj19dgj20iy0damzw.jpg" alt=""></p>
+<p>剩下的事情就是你自己玩了 。</p>
+<p>当然，我们刷机的主要一个目的就是科学安全的上网。</p>
+<p>我这里是用Shadowsocks。</p>
+<p>首先需要挂载JFFS，按我的截图设置</p>
+<p><img src="http://ww3.sinaimg.cn/large/62b50d84jw1exbvm7o6u7j20pe0j3abw.jpg" alt=""></p>
+<p>记得在enable之后执行Fomart，然后继续在Administration -&gt;Scripts中的Init选项卡中输入mount -o bind /jffs/opt /opt   点击Save保存</p>
+<p>然后进入ssh里面先把文件夹创建了  <code>cd /jffs</code>   <code>mkdir opt</code> </p>
+<p>重启路由器。</p>
+<p>然后在ssh里面执行mount来看一下挂载</p>
+<p><img src="http://ww2.sinaimg.cn/large/62b50d84jw1exbvr2dcl6j20fk05odhv.jpg" alt=""> </p>
+<p>看到箭头所指的说明挂载成功。</p>
+<p>接下来我们安装entware，安装(shadowsocks-libev)需要。</p>
+<p>执行命令：entware-install.sh。ATT 131版本集成好了entware的安装脚本，大家只要设置好/opt目录的挂载即可直接执行该命令安装entware</p>
+<p>entware安装成功之后安装shadowsocks-libev </p>
+<p>据网上资料显示entware<a href="http://qnapware.zyxmon.org/binaries-armv7/" target="_blank" rel="external">源</a>里面的版本是存在bug的，所以我自己安装用的是HOUZI自己编译的(最新版本2.4.0) 下载链接在最后</p>
+<p>将下载的 shadowsocks-libev_2.4.0-1_armv7soft.ipk 上传到 /opt，安装</p>
+<pre><code>root@unknown:/# opkg install shadowsocks-libev_2.4.0-1_armv7soft.ipk
+</code></pre><p>编辑 /opt/etc/shadowsocks.json,这个不多说，懂的人都会</p>
+<p>配置好json文件后，</p>
+<pre><code>root@unknown:/# /jffs/opt/etc/init.d/S22shadowsocks start
+Starting ss-local... done.
+</code></pre><p>说明 shadowsocks 本地代理启动了，可以用 Chrome 浏览器加上 SwitchyOmega 插件测试，</p>
+<p><img src="http://ww4.sinaimg.cn/large/62b50d84jw1exbw3osa6yj20ph076t9r.jpg" alt=""></p>
+<p>如果ok的话继续下面</p>
+<p>配置 ss-redir 透明代理</p>
+<p>编辑 <code>/opt/etc/init.d/S22shadowsocks</code></p>
+<p>找到</p>
+<p><code>PROCS=ss-local</code></p>
+<p>改成</p>
+<p><code>PROCS=ss-redir</code></p>
+<p>保存，输入命令</p>
+<pre><code>root@unknown:/# /jffs/opt/etc/init.d/S22shadowsocks restart
+Starting ss-redir... done.
+</code></pre><p>看到done就说明透明代理启动成功。</p>
+<p>ChinaDNS 防污染 和dnsmasq</p>
+<p>下载附件包，里面把里面的chinadns放到<code>/opt/bin</code>下。将dnsmasq.d文件夹和shadowsocks放到<code>/jffs</code>目录下，S23ss-tunnel，S24chinadns 放到<code>/jffs/opt/etc/init.d/</code>目录,将所有文件的权限设置为 755</p>
+<p>设置是否需要UDP转发：</p>
+<p>如果采用UDP转发则不用做任何修改，附件中得文件默认是UDP转发的，如果不用UDP转发打开shadowsocks，屏蔽下面几行：</p>
+<pre><code>sed -e &quot;s/shadowsocks.json\&quot;/shadowsocks.json -b 0.0.0.0 -l 5300 -L 8.8.8.8:53 -u\&quot;/&quot; -e &quot;s/PROCS=ss-redir/PROCS=ss-tunnel/&quot; /opt/etc/init.d/S22shadowsocks &gt; /opt/etc/init.d/S23ss-tunnel
+
+sed &apos;5c ARGS=&quot;-b 127.0.0.1 -p 5353 -c /opt/etc/chnroute.txt -s 114.114.114.114,127.0.0.1:5300&quot;&apos; /opt/etc/init.d/S24cn &gt; /opt/etc/init.d/S24chinadns
+
+/opt/etc/init.d/S23ss-tunnel start
+</code></pre><p>配置完成后执行以下命令更新 chnroutes 和 chinalist：</p>
+<pre><code>/jffs/shadowsocks update
+/jffs/shadowsocks update_chinalist
+</code></pre><p>如果配置正确的话以上命令执行后不会报错，且 /jffs 下 ignore.list 里有5000+行ip路由表</p>
+<p>配置运行脚本</p>
+<p>Advanced Tomato下 Administration -&gt; Scripts -&gt; init 里添加如下命令：</p>
+<pre><code>mount -o bind /jffs/opt /opt
+/jffs/shadowsocks ipset
+/jffs/shadowsocks run
+</code></pre><p>注意顺序不要错！</p>
+<p>Administration -&gt; Scripts -&gt; Wan Up 里添加如下命令：</p>
+<pre><code>/jffs/shadowsocks rules
+</code></pre><p>Advanced -&gt; DHCP/DNS -&gt; DHCP / DNS Server (LAN) -&gt; Dnsmasq (Custom configuration) 里添加如下命令：</p>
+<pre><code>no-poll
+no-resolv
+all-servers
+server=127.0.0.1#5353
+conf-dir=/jffs/dnsmasq.d
+</code></pre><p>配置ss-redir维持进程</p>
+<p>Administration -&gt; Scheduler -&gt; Custom 1 里添加 <code>/jffs/shadowsocks check</code> ，每分钟检查一次</p>
+<p>Administration -&gt; Scheduler -&gt; Custom 2 里添加 <code>echo &quot;&quot; &gt; /var/log/shadowsocks_watchdog.log</code> ，每15分钟清空一次日志</p>
+<p>以上配置结束后重启路由器。现在就可以科学上网了</p>
+<p>附件下载<br><a href="http://pan.baidu.com/s/1bnE1Vzx" target="_blank" rel="external">Package</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/07/08/share/2015-07-08-bandwagonhost/" rel="next" title="">
+                <i class="fa fa-chevron-left"></i> 
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2015/11/07/share/2015-11-06-mac-Terminal-socks/" rel="prev" title="">
+                 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="H_z" />
+          <p class="site-author-name" itemprop="name">H_z</p>
+           
+              <p class="site-description motion-element" itemprop="description">H_z ́ Blog</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">19</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">categories</span>
+              
+            </div>
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2012 &mdash; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">H_z</span>
+
+  
+</div>
+
+
+  <div class="powered-by">
+    Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+  </div>
+
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">
+    Theme &mdash;
+    <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+      NexT.Mist
+    </a>
+  </div>
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

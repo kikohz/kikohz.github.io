@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="title: openwrt(ar71xx)安装goagent继续设置远程代理 time: 2012-03-04 15:11:59 ##总体来说这个方法是可以接受的，但是不安全，通信都暴露在公网上，所以如非必要，不推荐 直接进入主题，openwrt安装goagent有很多教程，这里写一些我的过程： 首先我们要做远程代理，那必须先设置好动态域名，这个教程请参照OpenWrt配置花生壳 设置好之后继续">
+<meta property="og:type" content="article">
+<meta property="og:title" content="llost 随记">
+<meta property="og:url" content="http://blog.llost.net/2014/03/04/share/2014-03-04-openwrt-goagent-remote/index.html">
+<meta property="og:site_name" content="llost 随记">
+<meta property="og:description" content="title: openwrt(ar71xx)安装goagent继续设置远程代理 time: 2012-03-04 15:11:59 ##总体来说这个方法是可以接受的，但是不安全，通信都暴露在公网上，所以如非必要，不推荐 直接进入主题，openwrt安装goagent有很多教程，这里写一些我的过程： 首先我们要做远程代理，那必须先设置好动态域名，这个教程请参照OpenWrt配置花生壳 设置好之后继续">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/62b50d84gw1ee3rhc8dkmj20f204wt98.jpg">
+<meta property="og:image" content="http://ww4.sinaimg.cn/large/62b50d84gw1ee3rubsg9tj20fx06maae.jpg">
+<meta property="og:updated_time" content="2014-03-04T08:35:35.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="llost 随记">
+<meta name="twitter:description" content="title: openwrt(ar71xx)安装goagent继续设置远程代理 time: 2012-03-04 15:11:59 ##总体来说这个方法是可以接受的，但是不安全，通信都暴露在公网上，所以如非必要，不推荐 直接进入主题，openwrt安装goagent有很多教程，这里写一些我的过程： 首先我们要做远程代理，那必须先设置好动态域名，这个教程请参照OpenWrt配置花生壳 设置好之后继续">
+<meta name="twitter:image" content="http://ww1.sinaimg.cn/large/62b50d84gw1ee3rhc8dkmj20f204wt98.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://blog.llost.net/2014/03/04/share/2014-03-04-openwrt-goagent-remote/"/>
+
+
+
+
+
+  <title> | llost 随记</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">llost 随记</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">llost随记</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://blog.llost.net/2014/03/04/share/2014-03-04-openwrt-goagent-remote/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="H_z">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="llost 随记">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline"></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2014-03-04T16:35:35+08:00">
+                2014-03-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>title: openwrt(ar71xx)安装goagent继续设置远程代理</p>
+<p>time: 2012-03-04 15:11:59</p>
+<p>##总体来说这个方法是可以接受的，但是不安全，通信都暴露在公网上，所以如非必要，不推荐</p>
+<p>直接进入主题，openwrt安装goagent有很多教程，这里写一些我的过程：</p>
+<p>首先我们要做远程代理，那必须先设置好动态域名，这个教程请参照<br><a href="http://iloss.me/post/fen-xiang/2014-01-10-openwrt-ddns" target="_blank" rel="external">OpenWrt配置花生壳</a></p>
+<p>设置好之后继续我们的工作。</p>
+<p>由于我的路由器Flash太小，所以需要挂载U盘安装。挂载U盘教程很多，一般我们装好的估计基本都自带了，所以就不详细说明了</p>
+<p>将python安装到u盘</p>
+<pre><code>mkdir /mnt/sda1/packages/   （新建软件包目录）
+opkg --dest usb install python （将python安装到U盘）
+ln -s /mnt/sda1/packages/usr/bin/python /usr/bin/python （为python创建快捷方式，如省略此步，需键入 /mnt/sda1/packages/usr/bin/python 才能启动python）
+</code></pre><p>安装openssl (也是安装到U盘)</p>
+<pre><code>opkg --dest usb install pyopenssl python-openssl
+</code></pre><p>openssl有一个bug，需要替换一下文件：</p>
+<p><a href="http://cl.ly/2t3l461z2L3n/download/opssl%E9%9C%80%E8%A6%81%E6%9B%BF%E6%8D%A2%E6%96%87%E4%BB%B6.zip" target="_blank" rel="external">点击下载</a></p>
+<p>覆盖掉<br>/usr/lib/libssl.so.1.0.0</p>
+<p>/usr/lib/libcrypto.so.1.0.0</p>
+<p>开始安装gevent(强烈建议，能大大提高性能)</p>
+<p>这里直接给出编译好的安装包</p>
+<p><a href="http://cl.ly/1D0a330r050o/download/gevent.zip" target="_blank" rel="external">点击下载</a></p>
+<p>下载解压之后上传到U盘的随便目录</p>
+<p>然后开始安装(我还是装到了U盘)</p>
+<pre><code>opkg --dest usb install python-greenlet_0.4.0-1_ar71xx.ipk
+opkg --dest usb install gevent_1.0rc2-1_ar71xx.ipk
+</code></pre><p>#####注意安装顺序</p>
+<p>安装完成之后开始上传goagent<br>去<a href="https://code.google.com/p/goagent/" target="_blank" rel="external">https://code.google.com/p/goagent/</a> 下载。</p>
+<p>下载完成之后只需要上传local目录下的<br><img src="http://ww1.sinaimg.cn/large/62b50d84gw1ee3rhc8dkmj20f204wt98.jpg" alt=""><br>这几个文件就可以，proxy.ini文件自己配置好。(ip记得写0.0.0.0)</p>
+<p>(前提需要你已经上传过server)</p>
+<p>然后执行命令:</p>
+<pre><code>root@OpenWrt:~# cd /mnt/sda1/goagent/local/
+root@OpenWrt:/mnt/sda1/goagent/local# python proxy.py
+</code></pre><p>然后没有问题的话：</p>
+<pre><code>WARNING - [xxxxxxxxx] please install *libnss3-tools* package to import GoAgent root ca
+------------------------------------------------------
+GoAgent Version    : 2.1.17 (python/2.7.3 gevent/1.0dev pyopenssl/0.10)
+Listen Address     : 0.0.0.0:8087
+</code></pre><p>这个警告不用管。</p>
+<p>然后测试一下是否可以文明上网。</p>
+<p>ok 继续下一步，写一个脚本(添加开机自启动)</p>
+<pre><code>#!/bin/sh /etc/rc.common
+
+START=200
+APP=&quot;python /mnt/sda1/goagent/local/proxy.py&quot;
+PID_FILE=&quot;/var/run/goagent.pid&quot;
+
+start() {
+    start-stop-daemon -S -x $APP -p $PID_FILE -m -b
+}
+
+    stop() {
+    start-stop-daemon -K -p $PID_FILE -s TERM
+    rm -rf $PID_FILE
+}
+</code></pre><p>保存为goagent然后上传到 <code>/etc/init.d/</code><br>执行:</p>
+<pre><code>cd /etc/init.d/ 
+chmod +x goagent
+./goagent enable
+./goagent start
+</code></pre><p>###然后开始测试远程代理</p>
+<p>其实远程代理就是通过动态域名来获取路由器当前的ip去做代理.</p>
+<p>在代理软件里面填写:(Proxy SwitchySharp)</p>
+<p><img src="http://ww4.sinaimg.cn/large/62b50d84gw1ee3rubsg9tj20fx06maae.jpg" alt=""></p>
+<p>没有问题的情况下应该是可以文明上网。</p>
+<p>这样远程代理就ok</p>
+<p>iphone 可以在wifi代理里面设置。</p>
+<p>iphone 移动网络下可以参考这个教程去设置APN<br><a href="http://weblog.areverie.org/2013/09/use-apn-proxy-on-iphone/" target="_blank" rel="external">在 iPhone 上使用 APN 代理</a></p>
+<p>###其实实现远程主要是动态域名配合goagent</p>
+<p>参考：</p>
+<p><em><a href="http://xxxiixxx.blogspot.com/2013/04/gfw2-openwrtgoagent.html" target="_blank" rel="external">http://xxxiixxx.blogspot.com/2013/04/gfw2-openwrtgoagent.html</a>
+</em><a href="http://xuguang.info/blog/2013/02/solve-openwrt-python-md-rand-error/" target="_blank" rel="external">http://xuguang.info/blog/2013/02/solve-openwrt-python-md-rand-error/</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2014/01/13/share/2014-01-09-youku-html5/" rel="next" title="">
+                <i class="fa fa-chevron-left"></i> 
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2014/05/24/share/2014-05-24-linksys-ea6700-Unpacking/" rel="prev" title="">
+                 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="H_z" />
+          <p class="site-author-name" itemprop="name">H_z</p>
+           
+              <p class="site-description motion-element" itemprop="description">H_z ́ Blog</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">19</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">categories</span>
+              
+            </div>
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2012 &mdash; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">H_z</span>
+
+  
+</div>
+
+
+  <div class="powered-by">
+    Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+  </div>
+
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">
+    Theme &mdash;
+    <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+      NexT.Mist
+    </a>
+  </div>
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
