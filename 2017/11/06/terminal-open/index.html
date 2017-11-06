@@ -94,18 +94,18 @@
 
 
 
-<meta name="description" content="##Terminal open使用 经常使用mac终端，open命令经常用到，有时候需要直接open打开Finder，所以总结一下。 ###open命令我们先看一下open -h 1234567891011121314151617181920Usage: open [-e] [-t] [-f] [-W] [-R] [-n] [-g] [-h] [-s &amp;lt;partial SDK name&amp;gt">
+<meta name="description" content="Terminal open使用经常使用mac终端，open命令经常用到，有时候需要直接open打开Finder，所以总结一下。 open命令我们先看一下open -h 1234567891011121314151617181920Usage: open [-e] [-t] [-f] [-W] [-R] [-n] [-g] [-h] [-s &amp;lt;partial SDK name&amp;gt;][-b">
 <meta name="keywords" content="mac 终端">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Terminal open命令使用">
 <meta property="og:url" content="http://blog.llost.net/2017/11/06/terminal-open/index.html">
 <meta property="og:site_name" content="llost 随记">
-<meta property="og:description" content="##Terminal open使用 经常使用mac终端，open命令经常用到，有时候需要直接open打开Finder，所以总结一下。 ###open命令我们先看一下open -h 1234567891011121314151617181920Usage: open [-e] [-t] [-f] [-W] [-R] [-n] [-g] [-h] [-s &amp;lt;partial SDK name&amp;gt">
+<meta property="og:description" content="Terminal open使用经常使用mac终端，open命令经常用到，有时候需要直接open打开Finder，所以总结一下。 open命令我们先看一下open -h 1234567891011121314151617181920Usage: open [-e] [-t] [-f] [-W] [-R] [-n] [-g] [-h] [-s &amp;lt;partial SDK name&amp;gt;][-b">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-11-06T03:31:03.000Z">
+<meta property="og:updated_time" content="2017-11-06T03:33:33.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Terminal open命令使用">
-<meta name="twitter:description" content="##Terminal open使用 经常使用mac终端，open命令经常用到，有时候需要直接open打开Finder，所以总结一下。 ###open命令我们先看一下open -h 1234567891011121314151617181920Usage: open [-e] [-t] [-f] [-W] [-R] [-n] [-g] [-h] [-s &amp;lt;partial SDK name&amp;gt">
+<meta name="twitter:description" content="Terminal open使用经常使用mac终端，open命令经常用到，有时候需要直接open打开Finder，所以总结一下。 open命令我们先看一下open -h 1234567891011121314151617181920Usage: open [-e] [-t] [-f] [-W] [-R] [-n] [-g] [-h] [-s &amp;lt;partial SDK name&amp;gt;][-b">
 
 
 
@@ -335,23 +335,22 @@
       
 
       
-        <p>##Terminal open使用</p>
-<p>经常使用mac终端，open命令经常用到，有时候需要直接open打开Finder，所以总结一下。</p>
-<p>###open命令<br>我们先看一下<code>open -h</code></p>
+        <h2 id="Terminal-open使用"><a href="#Terminal-open使用" class="headerlink" title="Terminal open使用"></a>Terminal open使用</h2><p>经常使用mac终端，open命令经常用到，有时候需要直接open打开Finder，所以总结一下。</p>
+<h3 id="open命令"><a href="#open命令" class="headerlink" title="open命令"></a>open命令</h3><p>我们先看一下<code>open -h</code></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">Usage: open [-e] [-t] [-f] [-W] [-R] [-n] [-g] [-h] [-s &lt;partial SDK name&gt;][-b &lt;bundle identifier&gt;] [-a &lt;application&gt;] [filenames] [--args arguments]</div><div class="line">Help: Open opens files from a shell.</div><div class="line">      By default, opens each file using the default application <span class="keyword">for</span> that file.  </div><div class="line">      If the file is <span class="keyword">in</span> the form of a URL, the file will be opened as a URL.</div><div class="line">Options: </div><div class="line">      -a                Opens with the specified application.</div><div class="line">      -b                Opens with the specified application bundle identifier.</div><div class="line">      -e                Opens with TextEdit.</div><div class="line">      -t                Opens with default text editor.</div><div class="line">      -f                Reads input from standard input and opens with TextEdit.</div><div class="line">      -F  --fresh       Launches the app fresh, that is, without restoring windows. Saved persistent state is lost, excluding Untitled documents.</div><div class="line">      -R, --reveal      Selects <span class="keyword">in</span> the Finder instead of opening.</div><div class="line">      -W, --<span class="built_in">wait</span>-apps   Blocks until the used applications are closed (even <span class="keyword">if</span> they were already running).</div><div class="line">          --args        All remaining arguments are passed <span class="keyword">in</span> argv to the application<span class="string">'s main() function instead of opened.</span></div><div class="line"><span class="string">      -n, --new         Open a new instance of the application even if one is already running.</span></div><div class="line"><span class="string">      -j, --hide        Launches the app hidden.</span></div><div class="line"><span class="string">      -g, --background  Does not bring the application to the foreground.</span></div><div class="line"><span class="string">      -h, --header      Searches header file locations for headers matching the given filenames, and opens them.</span></div><div class="line"><span class="string">      -s                For -h, the SDK to use; if supplied, only SDKs whose names contain the argument value are searched.</span></div><div class="line"><span class="string">                        Otherwise the highest versioned SDK in each platform is used.</span></div></pre></td></tr></table></figure>
 <p>翻译部分：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">使用方法： open [-e] [-t] [-f] [-W] [-R] [-n] [-g] [-h] [-b ] [-a &lt;应用名&gt;] [文件名] [–args arguments] </div><div class="line">Help: 用于在命令行中打开文件 </div><div class="line">默认情况下，使用默认的应用打开对应的文件。 </div><div class="line">如果是URL格式的文件，那么就会在浏览器中打开。 </div><div class="line">Options: </div><div class="line">-a 指定打开文件的应用 </div><div class="line">-e 用TextEdit打开该文件 </div><div class="line">-t 用默认文本编辑器打开该文件 </div><div class="line">-R, –reveal 在Finder中显示并选中 </div><div class="line">-g, –background 在后台打开该文件（此时焦点还在Terminal上）</div></pre></td></tr></table></figure>
 <p>来看几个例子</p>
-<p>###打开目录<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ open ./</div></pre></td></tr></table></figure></p>
+<h3 id="打开目录"><a href="#打开目录" class="headerlink" title="打开目录"></a>打开目录</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ open ./</div></pre></td></tr></table></figure>
 <p>默认open后面是个目录，会用Finder打开，所以我们这个命令就是打开当前目录</p>
 <p>我们用Finder打开目录之后焦点就从终端切换到Finder了，如果还需要焦点保持在终端，那我们只需要添加一个参数 <code>-g</code></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ open -g ./</div></pre></td></tr></table></figure>
-<p>###浏览文件<br>文件太多的时候最好用了,注意用大写<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ open -R ./test.json</div></pre></td></tr></table></figure></p>
-<p>###我们也可以打开网站<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ open http://blog.llost.net</div></pre></td></tr></table></figure></p>
+<h3 id="浏览文件"><a href="#浏览文件" class="headerlink" title="浏览文件"></a>浏览文件</h3><p>文件太多的时候最好用了,注意用大写<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ open -R ./test.json</div></pre></td></tr></table></figure></p>
+<h3 id="我们也可以打开网站"><a href="#我们也可以打开网站" class="headerlink" title="我们也可以打开网站"></a>我们也可以打开网站</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ open http://blog.llost.net</div></pre></td></tr></table></figure>
 <p>http还是不能少的，不然无法识别</p>
 <p>我们还可以指定浏览器打开，默认都是用Safari<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ open -a  Google\ Chrome http://blog.llost.net</div></pre></td></tr></table></figure></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ open -a Firefox http://blog.llost.net</div></pre></td></tr></table></figure>
-<p>###编辑器打开<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ open -e ./test.json</div></pre></td></tr></table></figure></p>
+<h3 id="编辑器打开"><a href="#编辑器打开" class="headerlink" title="编辑器打开"></a>编辑器打开</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ open -e ./test.json</div></pre></td></tr></table></figure>
 <p>不加<code>-e</code>是用默认的应用打开，我们也可以用指定的编辑器<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ open -a Sublime\ Text ./test.json</div></pre></td></tr></table></figure></p>
 
       
@@ -443,8 +442,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="https://avatars2.githubusercontent.com/u/1294534?v=4&s=460"
@@ -530,6 +538,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Terminal-open使用"><span class="nav-number">1.</span> <span class="nav-text">Terminal open使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#open命令"><span class="nav-number">1.1.</span> <span class="nav-text">open命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#打开目录"><span class="nav-number">1.2.</span> <span class="nav-text">打开目录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#浏览文件"><span class="nav-number">1.3.</span> <span class="nav-text">浏览文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#我们也可以打开网站"><span class="nav-number">1.4.</span> <span class="nav-text">我们也可以打开网站</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#编辑器打开"><span class="nav-number">1.5.</span> <span class="nav-text">编辑器打开</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
