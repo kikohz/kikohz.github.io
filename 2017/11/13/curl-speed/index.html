@@ -78,7 +78,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="liunx,curl,下载," />
 
 
 
@@ -94,23 +94,18 @@
 
 
 
-<meta name="description" content="最近要计划出游，然后开始定酒店。正好前段时间Match到了希尔顿的钻卡，所以本次旅行计划都是希尔顿了(其实玩好常旅就是汉庭钱住希尔顿)。 #####首先隐藏的一个协议价(不会查)，如果没有别的活动，或者其他特殊要求就在这个地址去定。隐藏协议价订房 http://teamusa.hhonors.com/13/ 优惠15% http://stay.hilton.com/mvp/   mvp优惠15%">
+<meta name="description" content="有时候我们需要测下载速度，以及网站的连接状态，或者会碰到网慢的时候。我们可以用curl来测试 1curl -o /dev/null -name -w %&amp;#123;time_connect&amp;#125;:%&amp;#123;time_starttransfer&amp;#125;:%&amp;#123;time_total&amp;#125;:%&amp;#123;time_namelookup&amp;#125;:%&amp;#123;speed_d">
+<meta name="keywords" content="liunx,curl,下载">
 <meta property="og:type" content="article">
-<meta property="og:title" content="希尔顿订房总结">
-<meta property="og:url" content="http://blog.llost.net/2016/03/26/share/2016-03-26-hilton-play/index.html">
+<meta property="og:title" content="curl下载显示速度">
+<meta property="og:url" content="http://blog.llost.net/2017/11/13/curl-speed/index.html">
 <meta property="og:site_name" content="llost 随记">
-<meta property="og:description" content="最近要计划出游，然后开始定酒店。正好前段时间Match到了希尔顿的钻卡，所以本次旅行计划都是希尔顿了(其实玩好常旅就是汉庭钱住希尔顿)。 #####首先隐藏的一个协议价(不会查)，如果没有别的活动，或者其他特殊要求就在这个地址去定。隐藏协议价订房 http://teamusa.hhonors.com/13/ 优惠15% http://stay.hilton.com/mvp/   mvp优惠15%">
+<meta property="og:description" content="有时候我们需要测下载速度，以及网站的连接状态，或者会碰到网慢的时候。我们可以用curl来测试 1curl -o /dev/null -name -w %&amp;#123;time_connect&amp;#125;:%&amp;#123;time_starttransfer&amp;#125;:%&amp;#123;time_total&amp;#125;:%&amp;#123;time_namelookup&amp;#125;:%&amp;#123;speed_d">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://ww4.sinaimg.cn/mw690/62b50d84jw1f2abrzyzi8j20u009edhd.jpg">
-<meta property="og:image" content="http://ww4.sinaimg.cn/mw690/62b50d84jw1f2abvvizqjj21kk0tqtjp.jpg">
-<meta property="og:image" content="http://ww3.sinaimg.cn/mw690/62b50d84jw1f2abzjfmzlj21kw10iduf.jpg">
-<meta property="og:image" content="http://ww1.sinaimg.cn/mw690/62b50d84jw1f2ac0vfwpej21h611kqgu.jpg">
-<meta property="og:image" content="http://ww1.sinaimg.cn/mw690/62b50d84jw1f2ac3jys8qj21kw0rlwoy.jpg">
-<meta property="og:updated_time" content="2017-08-19T07:39:56.000Z">
+<meta property="og:updated_time" content="2017-11-13T08:14:17.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="希尔顿订房总结">
-<meta name="twitter:description" content="最近要计划出游，然后开始定酒店。正好前段时间Match到了希尔顿的钻卡，所以本次旅行计划都是希尔顿了(其实玩好常旅就是汉庭钱住希尔顿)。 #####首先隐藏的一个协议价(不会查)，如果没有别的活动，或者其他特殊要求就在这个地址去定。隐藏协议价订房 http://teamusa.hhonors.com/13/ 优惠15% http://stay.hilton.com/mvp/   mvp优惠15%">
-<meta name="twitter:image" content="http://ww4.sinaimg.cn/mw690/62b50d84jw1f2abrzyzi8j20u009edhd.jpg">
+<meta name="twitter:title" content="curl下载显示速度">
+<meta name="twitter:description" content="有时候我们需要测下载速度，以及网站的连接状态，或者会碰到网慢的时候。我们可以用curl来测试 1curl -o /dev/null -name -w %&amp;#123;time_connect&amp;#125;:%&amp;#123;time_starttransfer&amp;#125;:%&amp;#123;time_total&amp;#125;:%&amp;#123;time_namelookup&amp;#125;:%&amp;#123;speed_d">
 
 
 
@@ -139,13 +134,13 @@
 
 
 
-  <link rel="canonical" href="http://blog.llost.net/2016/03/26/share/2016-03-26-hilton-play/"/>
+  <link rel="canonical" href="http://blog.llost.net/2017/11/13/curl-speed/"/>
 
 
 
 
 
-  <title>希尔顿订房总结 | llost 随记</title>
+  <title>curl下载显示速度 | llost 随记</title>
   
 
 
@@ -262,7 +257,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://blog.llost.net/2016/03/26/share/2016-03-26-hilton-play/">
+    <link itemprop="mainEntityOfPage" href="http://blog.llost.net/2017/11/13/curl-speed/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="H_z">
@@ -279,7 +274,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">希尔顿订房总结</h1>
+          <h1 class="post-title" itemprop="name headline">curl下载显示速度</h1>
         
 
         <div class="post-meta">
@@ -291,8 +286,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-03-26T00:00:00+08:00">
-                2016-03-26
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-13T16:07:38+08:00">
+                2017-11-13
               </time>
             
 
@@ -309,7 +304,7 @@
 
           
           
-             <span id="/2016/03/26/share/2016-03-26-hilton-play/" class="leancloud_visitors" data-flag-title="希尔顿订房总结">
+             <span id="/2017/11/13/curl-speed/" class="leancloud_visitors" data-flag-title="curl下载显示速度">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -340,44 +335,14 @@
       
 
       
-        <p>最近要计划出游，然后开始定酒店。正好前段时间Match到了希尔顿的钻卡，所以本次旅行计划都是希尔顿了(其实玩好常旅就是汉庭钱住希尔顿)。</p>
-<p>#####首先隐藏的一个协议价(不会查)，如果没有别的活动，或者其他特殊要求就在这个地址去定。<br>隐藏协议价订房 <a href="http://teamusa.hhonors.com/13/" target="_blank" rel="external">http://teamusa.hhonors.com/13/</a> 优惠15%</p>
-<p><a href="http://stay.hilton.com/mvp/" target="_blank" rel="external">http://stay.hilton.com/mvp/</a>   mvp优惠15%</p>
-<p>###订房前记得注册各种活动，用来最大化回血</p>
-<p>###最近活动</p>
-<ul>
-<li>2016 Q1：双倍积分或里程［有效期至2016.4.30]：<a href="https://www.hiltonhhonors.com/4480_01012016/?lang=EN&amp;cid=OM,HH,CORE4480x,Offers,DYH2016" target="_blank" rel="external">链接戳我</a>—–＊＊*请注意，切记选择 DOUBLE POINTS。若选DOUBLE MILES，无法更改</li>
-<li>2016 Q1 新航三倍里程［有效期至2016.5.31]：<a href="https://www.hiltonhhonors.com/ProcessLanding/ProcessLanding/?lp=3XKrisFlyerMiles" target="_blank" rel="external">链接戳我</a>。      ＊＊亚太3倍，其他2倍。</li>
-<li>2016 Q1 澳航三倍里程［有效期至2016.6.30]；<a href="https://www.hiltonhhonors.com/processlanding/processlanding/?lp=3xqantaspoints" target="_blank" rel="external">链接戳我</a>。      ＊＊亚太3倍，其他2倍。</li>
-</ul>
-<p>康莱德华尔道夫三剑客(有效期2016-04-30):</p>
-<ul>
-<li>每晚2K：<a href="https://www.hiltonhhonors.com/processlanding/processlanding/?lp=luxury2kbonuspoints" target="_blank" rel="external">链接戳我</a>。</li>
-<li>1s有2n及以上5K：<a href="https://www.hiltonhhonors.com/processlanding/processlanding/?lp=luxury5kbonuspoints" target="_blank" rel="external">链接戳我</a>。</li>
-<li>3stay10K（2k，3k，5k）<a href="https://www.hiltonhhonors.com/processlanding/processlanding/?lp=luxuryescalatingbonuspoints" target="_blank" rel="external">链接戳我</a>。</li>
-</ul>
-<p>###注册完了开始订房，其实每季度都会有活动，这次刚好美洲地区75折促销一般会收到促销邮件<br><img src="http://ww4.sinaimg.cn/mw690/62b50d84jw1f2abrzyzi8j20u009edhd.jpg" alt=""><br>促销地址: <a href="http://hhonors3.hilton.com/en/offers/100088854.htm" target="_blank" rel="external">http://hhonors3.hilton.com/en/offers/100088854.htm</a></p>
-<p>订房我们可以先用在<a href="http://tripadvisor.com" target="_blank" rel="external">tripadvisor.com</a>上查房，看评论以及照片，相比官网照片以及评论要多很多。</p>
-<p>然后预定建议在英文网站去预定<a href="http://hhonors.hilton.com" target="_blank" rel="external">hhonors.hilton.com</a></p>
-<p><img src="http://ww4.sinaimg.cn/mw690/62b50d84jw1f2abvvizqjj21kk0tqtjp.jpg" alt=""></p>
-<p>关于入住人数，建议只选一个人，不然会影响价格(因为会员都是可以免费带第2个人入住)</p>
-<p>这里选洛杉矶，4月中旬的</p>
-<p><img src="http://ww3.sinaimg.cn/mw690/62b50d84jw1f2abzjfmzlj21kw10iduf.jpg" alt=""></p>
-<p>可以看到很多都订完了，(这里没有选使用积分兑换，下面这张图来对比一下选了积分兑换之后的价格)<br><img src="http://ww1.sinaimg.cn/mw690/62b50d84jw1f2ac0vfwpej21h611kqgu.jpg" alt=""></p>
-<p>根据我最近订房的经验，选了积分之后价格变化主要是把75折的优惠价格给隐藏了，我们选一个酒店进去之后看</p>
-<p><img src="http://ww1.sinaimg.cn/mw690/62b50d84jw1f2ac3jys8qj21kw0rlwoy.jpg" alt=""><br>可以看到$179为折扣之后的价格，如果用积分兑换需要50000分，这里简单说一下积分和现金怎么兑换比较合适。<br>我自己比较菜的算法(不适合有分用户或者高手)，最近希尔顿在卖分，100刀=18000分，为啥要买100刀的，因为建行6笔100到返现6%。  那么我们选一下1分的价格  100/180001=0.00555556的样子，然后我们看到这家酒店如果要用积分兑换需要50000x0.00555556=277.77， 这样一对比，那还是现金划算，而且现金还有回血。</p>
-<p>简单的就这么总结一下，当然brg(正在b万豪的，成功了继续写一篇)，以及match钻卡之类的我也是个新手，以后慢慢在来说吧。</p>
-<p>最后收藏一下查找不同CAT的链接，方便查找</p>
-<p><a href="http://hhonors.hilton.com/en/hhonors/rewards/search_result_reward_levels.jhtml?hhonorsRewardLevel=1" target="_blank" rel="external">CAT1</a></p>
-<p><a href="http://hhonors.hilton.com/en/hhonors/rewards/search_result_reward_levels.jhtml?hhonorsRewardLevel=2" target="_blank" rel="external">CAT2</a></p>
-<p><a href="http://hhonors.hilton.com/en/hhonors/rewards/search_result_reward_levels.jhtml?hhonorsRewardLevel=3" target="_blank" rel="external">CAT3</a></p>
-<p><a href="http://hhonors.hilton.com/en/hhonors/rewards/search_result_reward_levels.jhtml?hhonorsRewardLevel=4" target="_blank" rel="external">CAT4</a></p>
-<p><a href="http://hhonors.hilton.com/en/hhonors/rewards/search_result_reward_levels.jhtml?hhonorsRewardLevel=5" target="_blank" rel="external">CAT5</a></p>
-<p><a href="http://hhonors.hilton.com/en/hhonors/rewards/search_result_reward_levels.jhtml?hhonorsRewardLevel=6" target="_blank" rel="external">CAT6</a></p>
-<p><a href="http://hhonors.hilton.com/en/hhonors/rewards/search_result_reward_levels.jhtml?hhonorsRewardLevel=7" target="_blank" rel="external">CAT7</a></p>
-<p><a href="http://hhonors.hilton.com/en/hhonors/rewards/search_result_reward_levels.jhtml?hhonorsRewardLevel=8" target="_blank" rel="external">CAT8</a></p>
-<p><a href="http://hhonors.hilton.com/en/hhonors/rewards/search_result_reward_levels.jhtml?hhonorsRewardLevel=9" target="_blank" rel="external">CAT9</a></p>
-<p><a href="http://hhonors.hilton.com/en/hhonors/rewards/search_result_reward_levels.jhtml?hhonorsRewardLevel=10" target="_blank" rel="external">CAT10</a></p>
+        <p>有时候我们需要测下载速度，以及网站的连接状态，或者会碰到网慢的时候。我们可以用curl来测试</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">curl -o /dev/null -name -w %&#123;time_connect&#125;:%&#123;time_starttransfer&#125;:%&#123;time_total&#125;:%&#123;time_namelookup&#125;:%&#123;speed_download&#125; http://www.google.com</div></pre></td></tr></table></figure>
+<p>其中</p>
+<blockquote>
+<p>time_connect:建立到服务器的TCP连接所用的时间<br>time_starttransfer:在发出请求后，web服务器返回数据的第一个字节所用的时间<br>time_total:完成请求所用的时间<br>time_namelookup:DNS解析时间，从请求开始到DNS解析完毕所用时间（记得关掉Linux的nscd的服务测试）<br>speed_download:下载速度，单位字节每秒</p>
+</blockquote>
+<p><code>wget</code> 也可以用time参数来测试</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">time wget http://google.com</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -393,6 +358,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/liunx-curl-下载/" rel="tag"># liunx,curl,下载</a>
+          
+        </div>
+      
 
       
       
@@ -402,8 +373,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/11/06/share/2015-11-06-mac-Terminal-socks/" rel="next" title="Mac 终端设置代理">
-                <i class="fa fa-chevron-left"></i> Mac 终端设置代理
+              <a href="/2017/11/06/bwh-cn2-vps/" rel="next" title="搬瓦工CN2线路">
+                <i class="fa fa-chevron-left"></i> 搬瓦工CN2线路
               </a>
             
           </div>
@@ -411,10 +382,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/08/17/hexo-help/" rel="prev" title="Hexo help">
-                Hexo help <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
